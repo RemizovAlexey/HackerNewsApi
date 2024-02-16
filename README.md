@@ -4,7 +4,7 @@
 
 This project is a RESTful API that allows retrieving details of the best n stories from the Hacker News API, sorted by their score.
 
-The API provides one endpoints:
+The API provides one endpoint:
 GET /stories/{n} - Get details of the best n stories.
 
 ## Installation and Setup
