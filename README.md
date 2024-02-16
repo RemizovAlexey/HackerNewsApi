@@ -4,23 +4,22 @@
 
 This project is a RESTful API that allows retrieving details of the best n stories from the Hacker News API, sorted by their score.
 
-The API provides two endpoints:
-1. GET /stories/{n} - Get details of the best n stories.
-2. GET /health - Check the server's health status.
+The API provides one endpoints:
+GET /stories/{n} - Get details of the best n stories.
 
 ## Installation and Setup
 
 ### Requirements
-- .NET Core 3.1 or higher
+- .NET Core 7
 
 ### Installation
 1. Clone the repository to your local machine:
    
-    git clone https://github.com/yourusername/hacker-news-api-client.git
+    git clone https://github.com/RemizovAlexey/HackerNewsApi.git
     
 2. Navigate to the project directory:
    
-    cd hacker-news-api-client
+    cd HackerNewsApi
     
 ### Configuration
 1. Open the appsettings.json file.
@@ -38,13 +37,13 @@ The API provides two endpoints:
 ## Usage
 
 ### Getting details of the best stories
-GET /stories/{n}
+GET /stories/{count}
 
 Request parameters:
-- n (required) - the number of stories to retrieve.
+- count (required) - the number of stories to retrieve.
 
 Example request:
-GET /stories/10
+GET /stories/2
 
 Example response:
 [
