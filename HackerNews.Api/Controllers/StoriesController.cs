@@ -1,6 +1,5 @@
 ﻿using HackerNews.Core.Services;
 using Microsoft.AspNetCore.Mvc;
-using System.Text.Json;
 
 namespace HackerNewsApi.Controllers
 {
@@ -18,7 +17,9 @@ namespace HackerNewsApi.Controllers
         [HttpGet("{count}")]
         public async Task<ActionResult<IEnumerable<HackerNews.Core.Models.Story>>> GetBestStories(int count)
         {
-            var stories = await _storyService.GetBestStories(count);
+            var bestStoryIds = await _storyService.GetBestStoryIdsWithRetryAsync(3);
+            var stories = await _storyService.GetStoryDetailsAsync(bestStoryIds.Take(count));
+
             return Ok(stories.OrderByDescending(s => s.Score));
         }
     }
